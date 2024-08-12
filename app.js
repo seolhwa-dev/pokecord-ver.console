@@ -1,10 +1,10 @@
 const fs = require('fs');
 const readline = require('readline');
 
-// 전설 포켓몬 번호
-const legendaryPokemonIds = [144, 145, 146, 150];
-
-// JSON 파일로부터 포켓몬 목록 불러오기
+// 전설
+const legendaryPokemonIds = [144, 145, 146, 
+    
+    
 let pokemonList = [];
 fs.readFile('./pokemon.json', 'utf8', (err, data) => {
     if (err) {
@@ -19,7 +19,7 @@ fs.readFile('./pokemon.json', 'utf8', (err, data) => {
     }
 });
 
-// 포켓몬의 레벨을 생성하는 함수
+//
 function getPokemonLevel(isLegendary) {
     if (isLegendary) {
         return Math.floor(Math.random() * (51 - 40)) + 40;
@@ -33,12 +33,12 @@ function getPokemonLevel(isLegendary) {
     }
 }
 
-// 포획 실패 시 도망칠 확률을 계산하는 함수
+//
 function getFleeChance(isLegendary) {
     return isLegendary ? 0.90 : 0.30;
 }
 
-// 터미널 입력을 위한 인터페이스 생성
+//
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
